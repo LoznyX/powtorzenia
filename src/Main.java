@@ -1,25 +1,27 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-Notatka notatka = new Notatka("Inf-04","zdawanie egzaminu");
-        System.out.println("testowanie metody diagnostyka: ");
-        notatka.diagnostyka();
-        System.out.println("testownie metody wyswietlajacej tytul i tresc: ");
+            ArrayList<Integer> parzyste = new ArrayList<>();
+            for (int i = 200; i <301 ; i = i +2) {
+                    parzyste.add(i);
+            }
+            System.out.println(parzyste);
+            //zapytaj o liczbe i pod jakim indeksem jest
+            Scanner sc = new Scanner(System.in);
+            System.out.println("podaj szukana liczbe");
+            int liczbaszukana = sc.nextInt();
+            for (int i = 0; i < parzyste.size(); i++) {
+                 if(parzyste.get(i).equals(liczbaszukana))  {
+                         System.out.println("indeks wynosi: "+i);
+                         break;
+                 }
+            }
 
-        notatka.WyswietlTytuliTresc();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("podaj tytul");
-        String tytul = sc.next();
-        System.out.println("podaj tresc");
-        String tresc = sc.next();
-        Notatka notatka1 = new Notatka(tytul,tresc);
-        System.out.println("testowanie metody diagnostyka: ");
-        notatka1.diagnostyka();
-        System.out.println("testownie metody wyswietlajacej tytul i tresc: ");
+            }
 
-        notatka1.WyswietlTytuliTresc();
         }
-    }
+
